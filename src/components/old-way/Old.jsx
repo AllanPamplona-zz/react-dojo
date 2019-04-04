@@ -20,8 +20,10 @@ export default class Old extends Component {
     })
   }
 
-  componentDidUpdate(){
-    alert("Actualizado")
+  componentDidUpdate(prevProps, prevState){
+    if(prevState.count !== this.state.count){
+      alert("Actualizado")
+    }
   }
   
   componentWillUnmount(){
